@@ -43,6 +43,8 @@ async function realizarLogin() {
 				"--no-sandbox",
 				"--disable-setuid-sandbox",
 				"--start-maximized",
+				"--disable-dev-shm-usage",
+				"--single-process"
 			],
 			defaultViewport: null,
 		});
