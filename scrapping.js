@@ -38,15 +38,13 @@ async function realizarLogin() {
 	let browser;
 	try {
 		browser = await puppeteer.launch({
-			headless: false,
 			args: [
 				"--no-sandbox",
 				"--disable-setuid-sandbox",
-				"--start-maximized",
 				"--disable-dev-shm-usage",
-				"--single-process"
+				"--single-process",
+				"--headless=new",
 			],
-			defaultViewport: null,
 		});
 
 		const page = await browser.newPage();
