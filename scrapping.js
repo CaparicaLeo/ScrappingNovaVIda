@@ -45,6 +45,10 @@ async function realizarLogin() {
 				"--single-process",
 				"--headless=new",
 			],
+			defaultViewport: {
+				width: 1920,
+				height: 1080,
+			},
 		});
 
 		const page = await browser.newPage();
@@ -170,7 +174,10 @@ async function filtrarEExtrairLista(page, json) {
 		await page.click(`.abrir-cidades-${json.ESTADO}`);
 		await new Promise((resolve) => setTimeout(resolve, 30000));
 		await page.type(".campo-localidade", json.CIDADE);
-		await page.waitForSelector(`#retorno-busca-localidade-pj-${json.ESTADO} > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)`,{ visible: true, timeout: 90000 })
+		await page.waitForSelector(
+			`#retorno-busca-localidade-pj-${json.ESTADO} > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)`,
+			{ visible: true, timeout: 90000 }
+		);
 
 		await page.click(
 			`#retorno-busca-localidade-pj-${json.ESTADO} > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)`
