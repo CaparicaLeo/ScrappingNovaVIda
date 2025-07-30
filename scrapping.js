@@ -263,7 +263,7 @@ async function gerarLista(json) {
 
 		if (dadosExtraidos) {
 			await loginInfo.browser.close();
-21			return true;
+			return true;
 		} else {
 			console.log("Nenhum dado foi extraído, fechando o navegador.");
 			await loginInfo.browser.close();
