@@ -2,6 +2,7 @@ const express = require("express");
 const { gerarLista } = require("./scrapping");
 
 const app = express();
+const PORT = process.env.PORT || 3333;
 app.use(express.json());
 
 app.post("/gerar-lista", async (req, res) => {
@@ -25,6 +26,6 @@ app.post("/gerar-lista", async (req, res) => {
 	}
 });
 
-app.listen(3333, () => {
-	console.log("Server started at port 3333");
+app.listen(PORT, () => {
+	console.log(`Server started at port ${PORT}`);
 });
